@@ -14,6 +14,7 @@ class TestClass:
         time.sleep(3)
         self.browser.quit()
 
+    @pytest.mark.smoke
     def test_uniq_selectors1(self):
         browser = self.browser
         self.browser.get('http://suninjuly.github.io/registration1.html')
@@ -37,6 +38,7 @@ class TestClass:
 
         assert "Congratulations! You have successfully registered!" == welcome_text
 
+    @pytest.mark.xfail
     def test_uniq_selectors2(self):
         browser = self.browser
         self.browser.get('http://suninjuly.github.io/registration2.html')
